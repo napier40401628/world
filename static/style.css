@@ -26,3 +26,9 @@ img{width:50px;border: solid thin grey; }
 a{
 	text-decoration: none;
 }
+.nav_button{
+	border:solid thin black;
+	padding:lex;
+	width:15ex;
+	display:inline-block;
+}
