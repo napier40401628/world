@@ -67,11 +67,9 @@ def updateCountryByNamePage(	):
 			c = x
 	c['capital'] = request.args.get('capital')
 	c['continent'] = request.args.get('continent')
-	c["{:,.0f}".format('population')]=request.args.get('population')
-	c['gdp']=request.args.get('gdp')
 	return render_template(
 		'country.html',
-		c = c)
+		c = c) 
 		
 @app.route('/delete/<n>')
 def deleteCountry(n):
