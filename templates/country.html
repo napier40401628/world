@@ -15,16 +15,16 @@
 				<div><a href='../continent/{{c.continent}}'>{{c['continent']}}</a></div>
 			</div>
 			<div>
-				<div>Population</div>
-				<div>{{c['population']}}</div>
+				<div>Area</div>
+				<div>{{"{:,.0f}".format(c['area'])}}</div> 
 			</div>
 			<div>
-				<div>Area</div>
-				<div>{{c['area']}}</div>
+				<div>Population</div>
+				<div>{{"{:,.0f}".format(c['population'])}}</div>
 			</div>
 			<div>
 				<div>GDP (million $)</div>
-				<div>{{c['gdp']/1000000}}</div>
+				<div>{{ "{:,.0f}".format(c['gdp']/1000000) }}</div>
 			</div>
 			<div>
 				<div>TLD</div>
