@@ -5,7 +5,12 @@
 </head>
 	<body>
 		<h1>World Factbook</h1>
-		<div>There are {{w|length}} countries in in the world.</div>
+		<div>There are {{w|length}} countries in in the world.</div></br>
+		<div>
+			{% for a in letter%}
+				<a href="/alphacotinent/{{a}}">{{a}}</a>
+			{%endfor%}
+		</div>
 		<ul>
 			{% for c in w %}
 			<li><a href='/countryByName/{{c.name}}'>
