@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+	<link rel='stylesheet' href='/static/style.css'>
+</head>
+	<body>
+		<h1>World Factbook</h1>
+		<div>	
+			{% for a in letter%}
+				<a href="/alphacontinent/{{a}}">{{a}}</a>
+			{%endfor%}
+		</div>
+{% block content %} {% endblock %}
+	</body>
+</html>

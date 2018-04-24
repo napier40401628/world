@@ -1,10 +1,5 @@
-<!doctype html>
-<html>
-<head>
-	<link rel='stylesheet' href='/static/style.css'>
-</head>
-	<body>
-		<h1>{{a}}</h1>
+{% extends "base.html" %}
+{% block content %}
 		<div>There are {{length_of_cl}} countries start with {{a}}</div>
 		<ul>
 			{% for c in cl %}
@@ -16,5 +11,4 @@
 		<div class='createbutton'>
 			<a href='/createCountry'>Create</a>
 		</div>
-	</body>
-</html>
+{% endblock %}

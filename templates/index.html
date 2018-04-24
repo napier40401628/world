@@ -1,16 +1,6 @@
-<!doctype html>
-<html>
-<head>
-	<link rel='stylesheet' href='/static/style.css'>
-</head>
-	<body>
-		<h1>World Factbook</h1>
-		<div>There are {{w|length}} countries in in the world.</div></br>
-		<div>
-			{% for a in letter%}
-				<a href="/alphacotinent/{{a}}">{{a}}</a>
-			{%endfor%}
-		</div>
+{% extends "base.html" %}
+{% block content %}
+		<div>There are {{w|length}} countries in in the world.</div>
 		<ul>
 			{% for c in w %}
 			<li><a href='/countryByName/{{c.name}}'>
@@ -19,13 +9,12 @@
 			{% endfor %}
 		</ul>
 		<div class='nav_button'>
-			<a href='/begin/{{page_number-page_size}}'>Previous Page</a>
+			<a href='/navigate/{{page_number-page_size}}'>Previous Page</a>
 		</div>
 		<div class='nav_button'>
-			<a href='/begin/{{page_number+page_size}}'>Next Page</a>
+			<a href='/navigate/{{page_number+page_size}}'>Next Page</a>
 		</div>
 		<div class='createbutton'>
 			<a href='/createCountry'>Create</a>
 		</div>
-	</body>
-</html>
+{% endblock %}

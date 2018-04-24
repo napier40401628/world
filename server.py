@@ -4,25 +4,27 @@ import json
 w = json.load(open("worldl.json"))
 for c in w:
 	c['tld'] = c['tld'][1:]
-letter= sorted(list(set(c['name'][0] for c in w)))
+letter= sorted(list(set([c['name'][0] for c in w])))
 page_size = 20
-page_number =10
 app = Flask(__name__)
 
 @app.route('/')
 def mainPage():
 	return render_template('index.html',
-		w = w[0:page_size],page_number=page_number,page_size=page_size,letter = letter)
+		w = w[0:page_size],
+                page_number=0,
+                page_size=page_size,
+                letter = letter)
 
-@app.route('/begin/<b>')
-def beginPage(b):
+@app.route('/navigate/<b>')
+def navigatePage(b):
 	bn = int(b)
 	return render_template('index.html',
 		w = w[bn:bn+page_size],
 		page_number = bn,
 		page_size = page_size,
-		)
-
+		letter = letter)
+				
 @app.route('/continent/<a>')
 def continentPage(a):
 	cl = [c for c in w if c['continent']==a]
@@ -30,17 +32,16 @@ def continentPage(a):
 		'continent.html',
 		length_of_cl = len(cl),
 		cl = cl,
-		a = a
-		)
+		a = a,)
 
-@app.route('/alphacotinent/<a>')
+@app.route('/alphacontinent/<a>')
 def alphacontinentPage(a):
 	cl = [c for c in w if c['name'][0]==a]
 	return render_template(
 		'alphacontinent.html',
 		length_of_cl = len(cl),
 		cl = cl,
-		a = a,
+		a = a,letter=letter
 		)
 
 @app.route('/country/<i>')
@@ -123,4 +124,4 @@ def deleteCountry(n):
 		)
 		
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=5628, debug=True)
+	app.run( debug=True)
