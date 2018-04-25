@@ -5,11 +5,11 @@
 </head>
 	<body>
 		<h1>World Factbook</h1>
-		<div>	
+		<ul id="sort">	
 			{% for a in letter%}
 				<a href="/alphacontinent/{{a}}">{{a}}</a>
 			{%endfor%}
-		</div>
+		</ul>
 {% block content %} {% endblock %}
 	</body>
 </html>

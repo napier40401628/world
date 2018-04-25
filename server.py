@@ -120,7 +120,8 @@ def deleteCountry(n):
         return render_template('index.html',
 		w = w[0:page_size],
 		page_number = 0,
-		page_size = page_size
+		page_size = page_size,
+		letter = letter
 		)
 		
 if __name__ == '__main__':
