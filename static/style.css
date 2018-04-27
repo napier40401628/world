@@ -1,7 +1,6 @@
 body{
-	background-color: #cccccc;
+	background-color: #e9e9e9;
 	font-family:arial;
-	font-color: #000000;
 }
 img.tiny{
     width: 20px;
@@ -27,14 +26,10 @@ img{width:50px;border: solid thin grey; }
 }
 a{
 	text-decoration: none;
-<<<<<<< HEAD
 	color: #000000;
 }
 a:hover{
 	color: #336699
-=======
-	font-color: #000000;
->>>>>>> f1f99c6918f6e78b6370e79061467e0fb5ceb8b3
 }
 .nav_button{
 	border:solid thin black;
@@ -49,21 +44,14 @@ a:hover{
 	display:inline-block;
 }
 ul#sort a:link{
-<<<<<<< HEAD
 	background-color: #bf8040;
-=======
-	background-color: #000000;
->>>>>>> f1f99c6918f6e78b6370e79061467e0fb5ceb8b3
 	color: white;
 	padding: 10px 10px;
 	text-align: center;
 	text-decoration:none;
 	display: inline-block;
 	list-style-type:none;
-<<<<<<< HEAD
 }
 ul#sort a:hover{
-	background-color: #f43
-=======
->>>>>>> f1f99c6918f6e78b6370e79061467e0fb5ceb8b3
+	background-color: #ff0000
 }
